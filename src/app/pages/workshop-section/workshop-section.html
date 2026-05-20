@@ -1,51 +1,93 @@
 <section class="workshop-section">
   <div class="workshop-header">
-    <p class="section-kicker">Inside the Workshop</p>
-    <h2>Current Builds & Development Notes</h2>
+    <p class="section-kicker">The Workshop</p>
+
+    <h2>Behind the Build</h2>
+
     <p>
-      A living look at the projects currently taking shape inside Twisted Willow Workz.
+      Thoughts, sketches, updates, and the messy middle.
     </p>
   </div>
 
-  <div class="project-tabs">
-    <button class="project-tab active">All Projects</button>
-    <button class="project-tab">Vellichor Nook</button>
-    <button class="project-tab">Ashenwild</button>
-    <button class="project-tab">TWW Site</button>
+  <div
+    class="workshop-timeline-line"
+    aria-hidden="true">
   </div>
 
-  <div class="timeline">
-    <article class="timeline-item">
-      <div class="timeline-marker"></div>
-      <div class="timeline-card">
-        <span class="status-badge active">In Progress</span>
-        <h3>Vellichor Nook Dashboard</h3>
-        <p>
-          Building out the reading dashboard, library views, and cozy book tracking experience.
-        </p>
-      </div>
-    </article>
+  <div class="workshop-grid">
 
-    <article class="timeline-item">
-      <div class="timeline-marker"></div>
-      <div class="timeline-card">
-        <span class="status-badge planning">Planning</span>
-        <h3>Ashenwild Concept Work</h3>
-        <p>
-          Early world-building, tavern concepts, and feature planning for future immersive tools.
-        </p>
-      </div>
-    </article>
+    @for (item of workshopItems; track item.title; let i = $index) {
 
-    <article class="timeline-item">
-      <div class="timeline-marker"></div>
-      <div class="timeline-card">
-        <span class="status-badge active">In Progress</span>
-        <h3>Twisted Willow Workz Website</h3>
-        <p>
-          Creating the public home for the studio, projects, development notes, and future releases.
+      <article class="workshop-card">
+
+        <div class="timeline-dot">
+
+          @switch (i) {
+
+            @case (0) {
+              <span class="timeline-icon">❦</span>
+            }
+
+            @case (1) {
+              <span class="timeline-icon">&lt;/&gt;</span>
+            }
+
+            @case (2) {
+              <span class="timeline-icon">⌘</span>
+            }
+
+            @case (3) {
+              <span class="timeline-icon">✒</span>
+            }
+
+            @case (4) {
+              <span class="timeline-icon">◌</span>
+            }
+
+          }
+
+        </div>
+
+        <p class="workshop-date">
+          {{ item.date }}
         </p>
-      </div>
-    </article>
+
+        <p class="workshop-category">
+          {{ item.category }}
+        </p>
+
+        <div
+          class="workshop-image"
+          [class.sketch-image]="i === 0"
+          [class.code-image]="i === 1"
+          [class.ui-image]="i === 2"
+          [class.art-image]="i === 3"
+          [class.notes-image]="i === 4">
+        </div>
+
+        <h3>
+          {{ item.title }}
+        </h3>
+
+        <p class="workshop-description">
+          {{ item.description }}
+        </p>
+
+      </article>
+
+    }
+
+  </div>
+
+  <div class="workshop-action">
+
+    <a
+      class="journal-button"
+      href="#">
+
+      View Dev Journal
+
+    </a>
+
   </div>
 </section>

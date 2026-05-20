@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 
-type ProjectFilter = 'all' | 'vellichor' | 'ashenwild' | 'tww-site';
-
 interface WorkshopItem {
-  project: ProjectFilter;
-  projectLabel: string;
-  status: 'In Progress' | 'Planning' | 'Recently Updated';
+  date: string;
+  category: string;
   title: string;
   description: string;
+  imageUrl: string;
+  imageAlt: string;
 }
 
 @Component({
@@ -18,61 +17,46 @@ interface WorkshopItem {
   styleUrls: ['./workshop-section.css']
 })
 export class WorkshopSection {
-  selectedProject: ProjectFilter = 'all';
-
-  projectTabs: { label: string; value: ProjectFilter }[] = [
-    { label: 'All Projects', value: 'all' },
-    { label: 'Vellichor Nook', value: 'vellichor' },
-    { label: 'Ashenwild', value: 'ashenwild' },
-    { label: 'TWW Site', value: 'tww-site' }
-  ];
-
   workshopItems: WorkshopItem[] = [
     {
-      project: 'vellichor',
-      projectLabel: 'Vellichor Nook',
-      status: 'In Progress',
-      title: 'Reading Dashboard Buildout',
-      description:
-        'Shaping the dashboard, stats cards, reading charts, and cozy library experience.'
+      date: 'May 2, 2026',
+      category: 'Sketch',
+      title: 'Early Willow Concepts',
+      description: 'Exploring the twisted roots and living circuits that started it all.',
+      imageUrl: 'assets/image/workshop-sketch.png',
+      imageAlt: 'Sketchbook concept art'
     },
     {
-      project: 'tww-site',
-      projectLabel: 'TWW Site',
-      status: 'In Progress',
-      title: 'Studio Website Foundation',
-      description:
-        'Building the public home for Twisted Willow Workz, including project sections and development updates.'
+      date: 'May 9, 2026',
+      category: 'Develop',
+      title: 'Building the Foundation',
+      description: 'Core architecture, database models, and the first working pieces.',
+      imageUrl: 'assets/image/workshop-code.png',
+      imageAlt: 'Code editor with project files'
     },
     {
-      project: 'ashenwild',
-      projectLabel: 'Ashenwild',
-      status: 'Planning',
-      title: 'World & Tavern Concepts',
-      description:
-        'Exploring early concepts for immersive fantasy spaces, campaign tools, and living-world features.'
+      date: 'May 15, 2026',
+      category: 'UI/UX',
+      title: 'Designing Experiences',
+      description: 'Crafting interfaces that feel immersive, intuitive, and a little magical.',
+      imageUrl: 'assets/image/workshop-ui.png',
+      imageAlt: 'Fantasy styled application dashboard'
     },
     {
-      project: 'vellichor',
-      projectLabel: 'Vellichor Nook',
-      status: 'Recently Updated',
-      title: 'Library Views & Book Cards',
-      description:
-        'Refining the book list, card layouts, filters, sorting, and responsive library views.'
+      date: 'May 21, 2026',
+      category: 'Art',
+      title: 'Worldbuilding in Progress',
+      description: 'Concept art and mood boards for worlds that do not exist yet.',
+      imageUrl: 'assets/image/workshop-worldbuilding.png',
+      imageAlt: 'Dark fantasy worldbuilding artwork'
+    },
+    {
+      date: 'May 27, 2026',
+      category: 'Thoughts',
+      title: 'Lessons & Realizations',
+      description: 'Breakthroughs, failures, and the notes that shape what comes next.',
+      imageUrl: 'assets/image/workshop-notes.png',
+      imageAlt: 'Notebook with handwritten project notes'
     }
   ];
-
-  get filteredWorkshopItems(): WorkshopItem[] {
-    if (this.selectedProject === 'all') {
-      return this.workshopItems;
-    }
-
-    return this.workshopItems.filter(
-      item => item.project === this.selectedProject
-    );
-  }
-
-  selectProject(project: ProjectFilter): void {
-    this.selectedProject = project;
-  }
 }
