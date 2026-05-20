@@ -1,1 +1,43 @@
-<p>who-we-are-section works!</p>
+<section class="who-we-are-section">
+  <div class="who-we-are-header">
+    <p class="section-kicker">Who We Are</p>
+    <h2>A Small Studio with Big Curiosity</h2>
+  </div>
+
+  <div class="who-we-are-layout">
+    <div class="studio-copy">
+      <p>
+        Twisted Willow Workz is a small independent studio focused on immersive
+        software, creative tooling, storytelling systems, and handcrafted digital
+        experiences.
+      </p>
+
+      <p>
+        We believe in building things that last, sharing our journey, and creating
+        tools that empower creators and dreamers.
+      </p>
+
+      <p class="studio-highlight">
+        We’re just getting started.
+      </p>
+    </div>
+
+    <div class="studio-role-grid">
+      @for (role of studioRoles; track role.title) {
+        <article class="studio-role-card">
+          <div class="role-image" [class]="role.imageClass"></div>
+
+          <h3>{{ role.title }}</h3>
+          <p class="role-subtitle">{{ role.subtitle }}</p>
+          <p class="role-description">{{ role.description }}</p>
+
+          <div class="role-icons">
+            @for (icon of role.icons; track icon) {
+              <span>{{ icon }}</span>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
