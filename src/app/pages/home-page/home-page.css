@@ -16,10 +16,13 @@
 }
 
 .home-content-section {
-  position: relative;
+ display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 
-  margin-top: -2rem;
-  padding: 0 2rem 5rem;
+  padding:
+    0 1.5rem
+    3rem;
 
   .home-content-section {
   background:
