@@ -12,28 +12,36 @@
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
+
   overflow: hidden;
 }
 
 .home-content-section {
- display: flex;
+  display: flex;
   flex-direction: column;
+
+  /* spacing between cards */
   gap: 2.5rem;
 
+  /* spacing from hero and footer */
   padding:
-    0 1.5rem
-    3rem;
+    4rem 1.5rem
+    2rem;
 
-  .home-content-section {
+  /* restored green fantasy gradient */
   background:
     linear-gradient(
       to bottom,
-      #2d241c 0%,
-      #3a3128 18%,
-      #4a4034 40%,
-      #5a4d3d 100%
+      #1c2420 0%,
+      #243129 18%,
+      #314238 42%,
+      #3f5447 100%
     );
 
   color: #f4ead7;
 }
+
+/* keeps final section tighter to footer */
+.home-content-section > :last-child {
+  margin-bottom: 0;
 }
