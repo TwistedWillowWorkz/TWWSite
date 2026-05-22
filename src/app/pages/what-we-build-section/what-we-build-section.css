@@ -122,6 +122,8 @@
 
 .build-card {
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
 
   background:
     linear-gradient(
@@ -153,6 +155,13 @@
     0 0 18px rgba(255, 223, 148, 0.32),
     0 0 38px rgba(255, 223, 148, 0.16),
     0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.build-card:hover,
+.build-card:visited,
+.build-card:active {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* IMAGE */

@@ -1,9 +1,11 @@
+// projects.ts
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './projects.html',
-  styleUrl: './projects.css',
+  styleUrls: ['./projects.css']
 })
 export class Projects {}
