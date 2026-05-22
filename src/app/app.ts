@@ -1,12 +1,16 @@
 import { Component, signal } from '@angular/core';
-import { SiteFooter } from './layout/site-footer/site-footer';
-import { HomePage } from './pages/home-page/home-page';
-import { SiteHeader } from "./layout/site-header/site-header";
+import { RouterOutlet } from '@angular/router';
 
+import { SiteFooter } from './layout/site-footer/site-footer';
+import { SiteHeader } from './layout/site-header/site-header';
 
 @Component({
   selector: 'app-root',
-  imports: [SiteFooter, HomePage, SiteHeader],
+  imports: [
+    RouterOutlet,
+    SiteFooter,
+    SiteHeader
+  ],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })

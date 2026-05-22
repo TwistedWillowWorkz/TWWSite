@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {RouterLink} from "@angular/router";
 
 interface StudioRole {
   title: string;
@@ -11,7 +12,7 @@ interface StudioRole {
 @Component({
   selector: 'app-who-we-are-section',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './who-we-are-section.html',
   styleUrls: ['./who-we-are-section.css']
 })

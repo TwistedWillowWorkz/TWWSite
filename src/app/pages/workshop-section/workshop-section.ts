@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {RouterLink} from "@angular/router";
 
 interface WorkshopItem {
   date: string;
@@ -12,7 +13,7 @@ interface WorkshopItem {
 @Component({
   selector: 'app-workshop-section',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './workshop-section.html',
   styleUrls: ['./workshop-section.css']
 })
