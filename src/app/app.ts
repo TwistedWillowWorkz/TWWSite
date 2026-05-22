@@ -3,13 +3,15 @@ import { RouterOutlet } from '@angular/router';
 
 import { SiteFooter } from './layout/site-footer/site-footer';
 import { SiteHeader } from './layout/site-header/site-header';
+import { HeroSection } from './pages/hero-section/hero-section';
 
 @Component({
   selector: 'app-root',
   imports: [
     RouterOutlet,
     SiteFooter,
-    SiteHeader
+    SiteHeader,
+    HeroSection
   ],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
