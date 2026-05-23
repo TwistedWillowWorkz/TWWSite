@@ -1,0 +1,231 @@
+:host {
+  display: block;
+}
+
+.about-page {
+  min-height: 100vh;
+  padding: 7rem 1.5rem 4rem;
+
+  background:
+    radial-gradient(circle at top, rgba(191, 151, 82, 0.22), transparent 34rem),
+    linear-gradient(180deg, #1f3a2d 0%, #2d241c 55%, #1b1612 100%);
+
+  color: #f4ead7;
+}
+
+.manuscript-card {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem);
+
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid rgba(201, 159, 89, 0.55);
+  border-radius: 1.75rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(244, 234, 215, 0.96),
+      rgba(215, 190, 145, 0.92)
+    );
+
+  color: #2d241c;
+
+  box-shadow:
+    0 1.5rem 4rem rgba(0, 0, 0, 0.45),
+    inset 0 0 4rem rgba(87, 58, 31, 0.18);
+}
+
+.manuscript-card::before {
+  content: '';
+  position: absolute;
+  inset: 1rem;
+  pointer-events: none;
+
+  border: 1px solid rgba(92, 64, 38, 0.25);
+  border-radius: 1.25rem;
+}
+
+.manuscript-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 15% 15%, rgba(92, 64, 38, 0.14), transparent 18rem),
+    radial-gradient(circle at 85% 80%, rgba(92, 64, 38, 0.12), transparent 20rem);
+
+  pointer-events: none;
+}
+
+.tww-icon {
+  width: 5.25rem;
+  height: 5.25rem;
+  margin: 0 auto 1rem;
+
+  background-image: url('../../../assets/tww-icon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  filter: drop-shadow(0 0.35rem 0.5rem rgba(45, 36, 28, 0.25));
+}
+
+.about-header,
+.about-content {
+  position: relative;
+  z-index: 1;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 2.75rem;
+}
+
+.tww-icon {
+  width: 5.25rem;
+  height: 5.25rem;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0.35rem 0.5rem rgba(45, 36, 28, 0.25));
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6f4d2d;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  line-height: 0.95;
+  color: #2f2419;
+}
+
+.flourish {
+  margin-top: 1.25rem;
+  color: #8a642f;
+  letter-spacing: 0.5rem;
+}
+
+.about-content {
+  max-width: 54rem;
+  margin: 0 auto;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.8;
+}
+
+.about-content p {
+  margin: 0 0 1.35rem;
+}
+
+.statement-block {
+  margin: 2.25rem 0;
+  padding: 1.5rem;
+
+  border-left: 4px solid #8a642f;
+  border-radius: 1rem;
+
+  background: rgba(47, 36, 25, 0.08);
+}
+
+.statement-block p {
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.statement-block ul,
+.inspiration-list {
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+.statement-block li,
+.inspiration-list li {
+  margin: 0.35rem 0;
+}
+
+h2 {
+  margin: 2.75rem 0 1rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  color: #3f2d1b;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0 2rem;
+}
+
+.project-card {
+  padding: 1.35rem;
+  border: 1px solid rgba(92, 64, 38, 0.25);
+  border-radius: 1.2rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(31, 58, 45, 0.95),
+      rgba(45, 36, 28, 0.94)
+    );
+
+  color: #f4ead7;
+  box-shadow: 0 0.75rem 1.5rem rgba(45, 36, 28, 0.2);
+}
+
+.project-card h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.55rem;
+  color: #d6b36a;
+}
+
+.project-card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.closing-line {
+  margin-top: 2rem;
+  font-weight: 700;
+  color: #3f2d1b;
+}
+
+.final-line {
+  margin-top: 1rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  text-align: center;
+  color: #1f3a2d;
+}
+
+@media (max-width: 700px) {
+  .about-page {
+    padding: 6rem 1rem 3rem;
+  }
+
+  .manuscript-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content {
+    line-height: 1.7;
+  }
+}

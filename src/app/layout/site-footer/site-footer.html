@@ -69,9 +69,12 @@
 
       <h3>Get in Touch</h3>
 
-      <a href="mailto:Studio@twistedwillowworkz.com">
+      <button
+        type="button"
+        class="footer-email-button"
+        (click)="openContactForm()">
         Studio@twistedwillowworkz.com
-      </a>
+      </button>
 
       <p>
         Open to collaborations, ideas,
@@ -96,4 +99,66 @@
     </p>
 
   </div>
+
+  @if (isContactOpen) {
+  <div class="contact-modal-backdrop" (click)="closeContactForm()">
+    <div class="contact-modal" (click)="$event.stopPropagation()">
+
+      <button
+        type="button"
+        class="modal-close-button"
+        aria-label="Close contact form"
+        (click)="closeContactForm()">
+        ×
+      </button>
+
+      <p class="modal-kicker">Send a Raven</p>
+      <h2>Get in Touch</h2>
+
+      <form class="contact-form" (ngSubmit)="sendContactEmail()">
+
+        <label>
+          Name
+          <input
+            type="text"
+            name="name"
+            [(ngModel)]="contactForm.name"
+            required />
+        </label>
+
+        <label>
+          Email
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="contactForm.email"
+            required />
+        </label>
+
+        <label>
+          Subject
+          <input
+            type="text"
+            name="subject"
+            [(ngModel)]="contactForm.subject" />
+        </label>
+
+        <label>
+          Message
+          <textarea
+            name="message"
+            rows="5"
+            [(ngModel)]="contactForm.message"
+            required>
+          </textarea>
+        </label>
+
+        <button type="submit" class="contact-submit-button">
+          Send Message
+        </button>
+
+      </form>
+    </div>
+  </div>
+}
 </footer>

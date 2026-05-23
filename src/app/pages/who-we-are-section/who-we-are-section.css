@@ -121,6 +121,46 @@
   font-weight: 700;
 }
 
+.about-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 0.25rem;
+  padding: 0.75rem 1.35rem;
+
+  color: #2d241c;
+  background: linear-gradient(135deg, #f2c879, #d8b66f);
+
+  border: 1px solid rgba(244, 234, 215, 0.55);
+  border-radius: 999px;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  box-shadow:
+    0 0.75rem 1.5rem rgba(0, 0, 0, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.about-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 1rem 1.85rem rgba(0, 0, 0, 0.3),
+    0 0 1rem rgba(242, 200, 121, 0.24),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
 .studio-role-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

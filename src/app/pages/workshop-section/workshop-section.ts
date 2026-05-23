@@ -20,7 +20,7 @@ interface WorkshopItem {
 export class WorkshopSection {
   workshopItems: WorkshopItem[] = [
     {
-      date: 'May 2, 2026',
+      date: 'May 4, 2026',
       category: 'Sketch',
       title: 'Early Willow Concepts',
       description: 'Exploring the twisted roots and living circuits that started it all.',
@@ -28,7 +28,7 @@ export class WorkshopSection {
       imageAlt: 'Sketchbook concept art'
     },
     {
-      date: 'May 9, 2026',
+      date: 'May 10, 2026',
       category: 'Develop',
       title: 'Building the Foundation',
       description: 'Core architecture, database models, and the first working pieces.',
@@ -36,7 +36,7 @@ export class WorkshopSection {
       imageAlt: 'Code editor with project files'
     },
     {
-      date: 'May 15, 2026',
+      date: 'May 14, 2026',
       category: 'UI/UX',
       title: 'Designing Experiences',
       description: 'Crafting interfaces that feel immersive, intuitive, and a little magical.',
@@ -44,7 +44,7 @@ export class WorkshopSection {
       imageAlt: 'Fantasy styled application dashboard'
     },
     {
-      date: 'May 21, 2026',
+      date: 'May 18, 2026',
       category: 'Art',
       title: 'Worldbuilding in Progress',
       description: 'Concept art and mood boards for worlds that do not exist yet.',
@@ -52,10 +52,10 @@ export class WorkshopSection {
       imageAlt: 'Dark fantasy worldbuilding artwork'
     },
     {
-      date: 'May 27, 2026',
+      date: 'May 23, 2026',
       category: 'Thoughts',
-      title: 'Lessons & Realizations',
-      description: 'Breakthroughs, failures, and the notes that shape what comes next.',
+      title: 'Building Identity and Community',
+      description: 'Who are we and how do we shape what comes next.',
       imageUrl: 'assets/image/workshop-notes.png',
       imageAlt: 'Notebook with handwritten project notes'
     }
