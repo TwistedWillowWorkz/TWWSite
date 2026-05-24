@@ -3,12 +3,93 @@ body {
   margin: 0;
   padding: 0;
 
+  width: 100%;
+  min-height: 100%;
+
+  overflow-x: hidden;
+
+  scroll-behavior: smooth;
+
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background-color: #0f1a17;
+
+  color: #f4ead7;
+
+  font-family: 'Inter', sans-serif;
+
+  line-height: 1.5;
+
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+
+  text-decoration: none;
 }
 
 app-root {
   display: block;
+
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =========================================
+   RESPONSIVE TYPOGRAPHY
+========================================= */
+
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   LARGE SCREEN SUPPORT
+========================================= */
+
+@media (min-width: 1600px) {
+  html {
+    font-size: 18px;
+  }
 }

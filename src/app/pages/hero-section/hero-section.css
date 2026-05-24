@@ -13,7 +13,7 @@
 .hero-content {
   position: relative;
 
-  max-width: 1100px;
+  width: min(100%, 1100px);
 
   margin-top: 4rem;
 
@@ -71,7 +71,6 @@
 
   margin-bottom: 1.1rem;
 
-
   font-family: 'Cormorant Garamond', serif;
 
   font-size: clamp(2rem, 4vw, 3.5rem);
@@ -87,11 +86,11 @@
   color: #f4ead7;
 
   text-shadow:
-  0 0 2px rgba(157, 189, 91, 0.18),
-  0 0 6px rgba(157, 189, 91, 0.12),
-  0 0 10px rgba(0, 0, 0, 0.55),
-  0 0 28px rgba(0, 0, 0, 0.28),
-  0 4px 18px rgba(0, 0, 0, 0.65);
+    0 0 2px rgba(157, 189, 91, 0.18),
+    0 0 6px rgba(157, 189, 91, 0.12),
+    0 0 10px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(0, 0, 0, 0.28),
+    0 4px 18px rgba(0, 0, 0, 0.65);
 }
 
 .hero-title span {
@@ -167,17 +166,20 @@
 .hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 1.25rem;
   flex-wrap: wrap;
+
+  gap: 1.25rem;
 }
 
 .hero-btn {
   --cut: 14px;
 
   position: relative;
+
   isolation: isolate;
 
   padding: 0.95rem 2.2rem;
+
   min-width: 240px;
 
   border: none;
@@ -207,19 +209,27 @@
   font-family: 'Cinzel', serif;
   font-size: 0.95rem;
   font-weight: 700;
+
   letter-spacing: 0.08em;
+
   text-transform: uppercase;
 
   cursor: pointer;
+
   overflow: hidden;
 
   box-shadow:
     0 0 12px rgba(157, 189, 91, 0.16),
     0 8px 22px rgba(0, 0, 0, 0.42);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .hero-btn::before {
   content: "";
+
   position: absolute;
   inset: 2px;
 
@@ -238,6 +248,7 @@
 
 .hero-btn::after {
   content: "";
+
   position: absolute;
   inset: 7px;
 
@@ -254,6 +265,7 @@
     );
 
   pointer-events: none;
+
   z-index: -1;
 }
 
@@ -264,7 +276,7 @@
 
   box-shadow:
     0 0 14px rgba(181, 199, 108, 0.18),
-    0 8px 24px rgba(0,0,0,0.42);
+    0 8px 24px rgba(0, 0, 0, 0.42);
 }
 
 .primary-btn {
@@ -279,9 +291,225 @@
 }
 
 .secondary-btn {
-  background:
-    rgba(12, 13, 12, 0.82);
+  background: rgba(12, 13, 12, 0.82);
 
-  border-color:
-    rgba(190, 190, 190, 0.22);
+  border-color: rgba(190, 190, 190, 0.22);
+}
+
+/* =========================================
+   LARGE MONITORS
+========================================= */
+
+@media (min-width: 1600px) {
+  .hero-overlay {
+    min-height: 44rem;
+
+    padding: 0 4rem;
+  }
+
+  .hero-content {
+    width: min(100%, 1300px);
+
+    margin-top: 5rem;
+
+    padding: 4rem 5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(3.25rem, 4vw, 5rem);
+  }
+
+  .hero-description {
+    max-width: 820px;
+
+    font-size: 1.75rem;
+  }
+
+  .hero-divider {
+    max-width: 700px;
+  }
+}
+
+/* =========================================
+   LAPTOPS / SMALL DESKTOPS
+========================================= */
+
+@media (max-width: 1200px) {
+  .hero-overlay {
+    min-height: 30rem;
+  }
+
+  .hero-content {
+    max-width: 950px;
+
+    margin-top: 4rem;
+
+    padding: 2.75rem 3rem;
+  }
+
+  .hero-description {
+    font-size: 1.35rem;
+  }
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+  .hero-overlay {
+    min-height: 30rem;
+
+    padding: 0 1.5rem;
+  }
+
+  .hero-content {
+    max-width: 760px;
+
+    margin-top: 7rem;
+
+    padding: 2.25rem 2rem;
+  }
+
+  .hero-content::before {
+    inset: -1.5rem;
+
+    border-radius: 32px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+
+    letter-spacing: 0.06em;
+  }
+
+  .hero-description {
+    max-width: 620px;
+
+    font-size: 1.15rem;
+  }
+
+  .hero-divider {
+    max-width: 460px;
+
+    margin: 1.4rem auto 1.8rem;
+  }
+
+  .divider-ornament {
+    font-size: 2rem;
+  }
+
+  .hero-btn {
+    min-width: 220px;
+
+    padding: 0.85rem 1.8rem;
+
+    font-size: 0.86rem;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .hero-overlay {
+    min-height: 26rem;
+
+    padding: 0 1rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+
+    margin-top: 8rem;
+
+    padding: 1.75rem 1rem;
+  }
+
+  .hero-content::before {
+    inset: -0.75rem;
+
+    border-radius: 24px;
+
+    background:
+      radial-gradient(
+        circle at center,
+        rgba(10, 12, 10, 0.42),
+        rgba(10, 12, 10, 0.24) 48%,
+        transparent 82%
+      );
+  }
+
+  .hero-title {
+    margin-bottom: 0.85rem;
+
+    font-size: clamp(1.65rem, 9vw, 2.45rem);
+
+    line-height: 1.12;
+
+    letter-spacing: 0.045em;
+  }
+
+  .hero-description {
+    margin-bottom: 1.4rem;
+
+    max-width: 100%;
+
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .hero-divider {
+    gap: 0.75rem;
+
+    max-width: 300px;
+
+    margin: 1.15rem auto 1.5rem;
+  }
+
+  .divider-ornament {
+    font-size: 1.65rem;
+  }
+
+  .hero-buttons {
+    width: 100%;
+
+    gap: 0.85rem;
+  }
+
+  .hero-btn {
+    width: 100%;
+    min-width: 0;
+
+    padding: 0.85rem 1rem;
+
+    font-size: 0.78rem;
+
+    letter-spacing: 0.06em;
+  }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+  .hero-content {
+    margin-top: 8.5rem;
+
+    padding: 1.5rem 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 1.55rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-btn {
+    font-size: 0.72rem;
+  }
 }

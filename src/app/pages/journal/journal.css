@@ -1,5 +1,7 @@
 :host {
   display: block;
+
+  width: 100%;
 }
 
 .journal-page {
@@ -17,6 +19,8 @@
     );
 
   color: #f4ead7;
+
+  overflow-x: hidden;
 }
 
 .journal-hero,
@@ -24,6 +28,7 @@
   position: relative;
 
   width: min(1050px, 100%);
+
   margin: 0 auto 2.5rem;
 
   padding: 2.5rem;
@@ -44,6 +49,8 @@
     0 0 0 4px rgba(93, 68, 35, 0.45),
     0 1.25rem 3rem rgba(0, 0, 0, 0.35),
     inset 0 0 2rem rgba(93, 68, 35, 0.18);
+
+  overflow: hidden;
 }
 
 .journal-hero::before,
@@ -61,14 +68,19 @@
 
 .top-link {
   position: absolute;
+
   top: 1.5rem;
   right: 1.75rem;
 
-   color: #1f3a2d;
+  z-index: 2;
+
+  color: #1f3a2d;
 
   font-size: 0.75rem;
   font-weight: 700;
+
   letter-spacing: 0.18rem;
+
   text-decoration: none;
 
   border-bottom: 1px solid currentColor;
@@ -77,6 +89,15 @@
     color 0.2s ease,
     text-shadow 0.2s ease,
     border-color 0.2s ease;
+}
+
+.top-link:hover {
+  color: #7a5a27;
+
+  border-color: #7a5a27;
+
+  text-shadow:
+    0 0 0.45rem rgba(242, 200, 121, 0.85);
 }
 
 .journal-hero {
@@ -90,7 +111,9 @@
 
   font-size: 0.78rem;
   font-weight: 700;
+
   letter-spacing: 0.18rem;
+
   text-transform: uppercase;
 }
 
@@ -101,6 +124,7 @@
   color: #1f3a2d;
 
   font-family: Georgia, 'Times New Roman', serif;
+
   line-height: 1.05;
 }
 
@@ -110,6 +134,7 @@
 
 .journal-card h2 {
   margin-bottom: 1rem;
+
   font-size: clamp(1.6rem, 3vw, 2.2rem);
 }
 
@@ -124,10 +149,16 @@
   line-height: 1.75;
 }
 
+/* =========================================
+   JOURNAL LIST
+========================================= */
+
 .journal-list {
   display: flex;
   flex-direction: column;
+
   gap: 0.5rem;
+
   padding-top: 4rem;
 }
 
@@ -138,15 +169,10 @@
 
   font-size: 0.8rem;
   font-weight: 700;
+
   letter-spacing: 0.12rem;
+
   text-transform: uppercase;
-}
-
-.journal-card p {
-  color: #3f3025;
-
-  font-size: 1rem;
-  line-height: 1.8;
 }
 
 .journal-card {
@@ -156,26 +182,40 @@
     border-color 0.2s ease;
 }
 
+.journal-card p {
+  color: #3f3025;
+
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
 .journal-card blockquote {
   margin: 1.25rem 0;
+
   padding: 1rem 1.25rem;
 
   color: #1f3a2d;
+
   font-family: Georgia, 'Times New Roman', serif;
+
   font-size: 1.15rem;
   font-style: italic;
+
   line-height: 1.6;
 
   border-left: 4px solid #7a5a27;
-  background: rgba(31, 58, 45, 0.08);
   border-radius: 0.75rem;
+
+  background: rgba(31, 58, 45, 0.08);
 }
 
 .journal-card ul {
   margin: 1rem 0 1.25rem;
+
   padding-left: 1.5rem;
 
   color: #3f3025;
+
   line-height: 1.8;
 }
 
@@ -194,13 +234,175 @@
     inset 0 0 2rem rgba(93, 68, 35, 0.22);
 }
 
-@media (max-width: 700px) {
+/* =========================================
+   LARGE MONITORS
+========================================= */
+
+@media (min-width: 1600px) {
   .journal-page {
-    padding: 3rem 1rem;
+    padding: 5rem 4rem;
   }
 
   .journal-hero,
   .journal-card {
-    padding: 2rem 1.35rem;
+    width: min(1250px, 100%);
+
+    padding: 3rem;
+  }
+
+  .journal-hero p,
+  .journal-card p,
+  .journal-card ul {
+    font-size: 1.08rem;
+  }
+
+  .journal-card blockquote {
+    font-size: 1.25rem;
+  }
+}
+
+/* =========================================
+   LAPTOPS / SMALL DESKTOPS
+========================================= */
+
+@media (max-width: 1200px) {
+  .journal-page {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .journal-hero,
+  .journal-card {
+    padding: 2.35rem;
+  }
+
+  .journal-list {
+    padding-top: 3rem;
+  }
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+  .journal-page {
+    padding: 3rem 1.25rem;
+  }
+
+  .journal-hero,
+  .journal-card {
+    margin-bottom: 2rem;
+
+    padding: 2.1rem 1.75rem;
+  }
+
+  .journal-list {
+    padding-top: 2.5rem;
+  }
+
+  .journal-hero p,
+  .journal-card p,
+  .journal-card ul {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  .journal-card blockquote {
+    font-size: 1.05rem;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .journal-page {
+    padding: 2.5rem 1rem;
+  }
+
+  .journal-hero,
+  .journal-card {
+    margin-bottom: 1.75rem;
+
+    padding: 2rem 1.25rem;
+
+    border-radius: 1rem;
+  }
+
+  .journal-hero::before,
+  .journal-card::before {
+    inset: 0.45rem;
+
+    border-radius: 0.75rem;
+  }
+
+  .top-link {
+    position: static;
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 0 1.25rem auto;
+  }
+
+  .section-kicker {
+    font-size: 0.7rem;
+
+    letter-spacing: 0.14rem;
+  }
+
+  .journal-hero h1 {
+    font-size: clamp(1.85rem, 9vw, 2.45rem);
+  }
+
+  .journal-card h2 {
+    font-size: clamp(1.45rem, 7vw, 1.85rem);
+  }
+
+  .journal-hero p,
+  .journal-card p,
+  .journal-card ul {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  .journal-list {
+    gap: 0.25rem;
+
+    padding-top: 2rem;
+  }
+
+  .journal-meta {
+    font-size: 0.72rem;
+
+    letter-spacing: 0.08rem;
+  }
+
+  .journal-card blockquote {
+    padding: 0.9rem 1rem;
+
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+  .journal-page {
+    padding: 2rem 0.8rem;
+  }
+
+  .journal-hero,
+  .journal-card {
+    padding: 1.75rem 1rem;
+  }
+
+  .journal-card ul {
+    padding-left: 1.25rem;
   }
 }

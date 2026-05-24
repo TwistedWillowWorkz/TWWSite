@@ -1,9 +1,12 @@
 :host {
   display: block;
+
+  width: 100%;
 }
 
 .projects-page {
   min-height: 100vh;
+
   padding: 4rem 1.5rem 4rem;
 
   background:
@@ -16,20 +19,30 @@
     );
 
   color: #f4ead7;
+
+  overflow-x: hidden;
 }
 
 .projects-hero,
 .project-feature-card,
 .future-projects-card {
   position: relative;
+
   width: min(1100px, 100%);
+
   margin: 0 auto 2.5rem;
+
   padding: 2.5rem;
 
   background:
-    linear-gradient(135deg, rgba(244, 234, 215, 0.96), rgba(214, 188, 132, 0.9));
+    linear-gradient(
+      135deg,
+      rgba(244, 234, 215, 0.96),
+      rgba(214, 188, 132, 0.9)
+    );
 
   color: #2d241c;
+
   border: 2px solid rgba(242, 200, 121, 0.95);
   border-radius: 1.35rem;
 
@@ -37,16 +50,21 @@
     0 0 0 4px rgba(93, 68, 35, 0.45),
     0 1.25rem 3rem rgba(0, 0, 0, 0.35),
     inset 0 0 2rem rgba(93, 68, 35, 0.18);
+
+  overflow: hidden;
 }
 
 .projects-hero::before,
 .project-feature-card::before,
 .future-projects-card::before {
   content: "";
+
   position: absolute;
   inset: 0.55rem;
+
   border: 1px solid rgba(93, 68, 35, 0.45);
   border-radius: 0.95rem;
+
   pointer-events: none;
 }
 
@@ -57,10 +75,14 @@
 .section-kicker,
 .project-type {
   margin: 0 0 0.5rem;
+
   color: #7a5a27;
+
   font-size: 0.78rem;
   font-weight: 700;
+
   letter-spacing: 0.18rem;
+
   text-transform: uppercase;
 }
 
@@ -68,16 +90,23 @@
 .project-feature-card h2,
 .future-projects-card h2 {
   margin: 0;
+
   color: #1f3a2d;
+
   font-family: Georgia, 'Times New Roman', serif;
+
   font-size: clamp(2rem, 4vw, 3.4rem);
+
   line-height: 1.05;
 }
 
 .projects-hero p {
   max-width: 720px;
+
   margin: 1rem auto 0;
+
   color: #4b3a2c;
+
   font-size: 1.05rem;
   line-height: 1.75;
 }
@@ -86,35 +115,48 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+
   gap: 1.5rem;
+
   margin-bottom: 1.5rem;
+
   padding-right: 4rem;
 }
 
 .status-badge {
   flex-shrink: 0;
+
   padding: 0.45rem 0.85rem;
-  border-radius: 999px;
+
   border: 1px solid currentColor;
+  border-radius: 999px;
+
   font-size: 0.72rem;
   font-weight: 800;
+
   letter-spacing: 0.12rem;
+
   text-transform: uppercase;
+
+  white-space: nowrap;
 }
 
 .status-badge.in-development {
   color: #1f3a2d;
+
   background: rgba(31, 58, 45, 0.12);
 }
 
 .status-badge.conceptual {
   color: #7a3f1d;
+
   background: rgba(122, 63, 29, 0.12);
 }
 
 .project-feature-card p,
 .future-projects-card p {
   color: #3f3025;
+
   font-size: 1rem;
   line-height: 1.8;
 }
@@ -125,22 +167,36 @@
 
 .ashenwild-card {
   background:
-    linear-gradient(135deg, rgba(244, 234, 215, 0.96), rgba(194, 159, 116, 0.92));
+    linear-gradient(
+      135deg,
+      rgba(244, 234, 215, 0.96),
+      rgba(194, 159, 116, 0.92)
+    );
 }
+
+/* =========================================
+   FUTURE PROJECT GRID
+========================================= */
 
 .future-project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
   gap: 1.25rem;
+
   margin-top: 1.75rem;
 }
 
 .future-project-grid article {
   padding: 1.35rem;
+
   background: rgba(31, 58, 45, 0.09);
+
   border: 1px solid rgba(122, 90, 39, 0.35);
   border-radius: 1rem;
-  box-shadow: inset 0 0 1.5rem rgba(244, 234, 215, 0.18);
+
+  box-shadow:
+    inset 0 0 1.5rem rgba(244, 234, 215, 0.18);
 
   transition:
     transform 0.2s ease,
@@ -150,6 +206,7 @@
 
 .future-project-grid article:hover {
   transform: translateY(-0.18rem);
+
   border-color: rgba(242, 200, 121, 0.85);
 
   box-shadow:
@@ -159,28 +216,42 @@
 
 .future-project-grid h3 {
   margin: 0 0 0.65rem;
+
   color: #1f3a2d;
+
   font-family: Georgia, 'Times New Roman', serif;
+
   font-size: 1.35rem;
 }
 
 .future-project-grid p {
   margin: 0;
+
   font-size: 0.95rem;
   line-height: 1.65;
 }
 
+/* =========================================
+   TOP LINK
+========================================= */
+
 .top-link {
   position: absolute;
+
   top: 1.5rem;
   right: 1.75rem;
+
   z-index: 2;
 
   color: #7a5a27;
+
   font-size: 0.72rem;
   font-weight: 800;
+
   letter-spacing: 0.18rem;
+
   text-decoration: none;
+
   border-bottom: 1px solid currentColor;
 
   transition:
@@ -191,27 +262,183 @@
 
 .top-link:hover {
   color: #1f3a2d;
+
   border-color: #1f3a2d;
-  text-shadow: 0 0 0.45rem rgba(242, 200, 121, 0.85);
+
+  text-shadow:
+    0 0 0.45rem rgba(242, 200, 121, 0.85);
 }
 
-@media (max-width: 700px) {
+/* =========================================
+   LARGE MONITORS
+========================================= */
+
+@media (min-width: 1600px) {
   .projects-page {
-    padding: 3rem 1rem;
+    padding: 5rem 4rem;
   }
 
   .projects-hero,
   .project-feature-card,
   .future-projects-card {
-    padding: 2rem 1.35rem;
+    width: min(1300px, 100%);
+
+    padding: 3rem;
+  }
+
+  .projects-hero p,
+  .project-feature-card p,
+  .future-projects-card p {
+    font-size: 1.08rem;
+  }
+
+  .future-project-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 1.5rem;
+  }
+}
+
+/* =========================================
+   LAPTOPS / SMALL DESKTOPS
+========================================= */
+
+@media (max-width: 1200px) {
+  .projects-page {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .projects-hero,
+  .project-feature-card,
+  .future-projects-card {
+    padding: 2.35rem;
+  }
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+  .projects-page {
+    padding: 3rem 1.25rem;
+  }
+
+  .projects-hero,
+  .project-feature-card,
+  .future-projects-card {
+    margin-bottom: 2rem;
+
+    padding: 2.1rem 1.75rem;
   }
 
   .project-heading {
     flex-direction: column;
-    padding-right: 3rem;
+
+    gap: 1rem;
+
+    padding-right: 0;
   }
 
   .status-badge {
     align-self: flex-start;
+  }
+
+  .future-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  .projects-page {
+    padding: 2.5rem 1rem;
+  }
+
+  .projects-hero,
+  .project-feature-card,
+  .future-projects-card {
+    margin-bottom: 1.75rem;
+
+    padding: 2rem 1.25rem;
+
+    border-radius: 1rem;
+  }
+
+  .projects-hero::before,
+  .project-feature-card::before,
+  .future-projects-card::before {
+    inset: 0.45rem;
+
+    border-radius: 0.75rem;
+  }
+
+  .section-kicker,
+  .project-type {
+    font-size: 0.7rem;
+
+    letter-spacing: 0.14rem;
+  }
+
+  .projects-hero h1,
+  .project-feature-card h2,
+  .future-projects-card h2 {
+    font-size: clamp(1.85rem, 9vw, 2.45rem);
+  }
+
+  .projects-hero p,
+  .project-feature-card p,
+  .future-projects-card p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  .top-link {
+    position: static;
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 0 1.25rem auto;
+  }
+
+  .future-project-grid {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+  }
+
+  .future-project-grid article {
+    padding: 1.15rem;
+  }
+
+  .status-badge {
+    font-size: 0.66rem;
+
+    letter-spacing: 0.08rem;
+  }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+  .projects-page {
+    padding: 2rem 0.8rem;
+  }
+
+  .projects-hero,
+  .project-feature-card,
+  .future-projects-card {
+    padding: 1.75rem 1rem;
+  }
+
+  .future-project-grid h3 {
+    font-size: 1.2rem;
   }
 }

@@ -2,8 +2,10 @@
   position: relative;
   z-index: 2;
 
-  max-width: 1500px;
+  width: min(100%, 1500px);
+
   margin: 0 auto;
+
   padding: 2.5rem 2rem 3rem;
 
   background:
@@ -28,6 +30,7 @@
 
 .who-we-are-section::before {
   content: '';
+
   position: absolute;
   inset: 10px;
 
@@ -39,14 +42,17 @@
 
 .top-link {
   position: absolute;
+
   top: 1.5rem;
   right: 1.75rem;
 
-   color: #f4ead7;
+  color: #f4ead7;
 
   font-size: 0.75rem;
   font-weight: 700;
+
   letter-spacing: 0.18rem;
+
   text-decoration: none;
 
   border-bottom: 1px solid currentColor;
@@ -57,7 +63,7 @@
     border-color 0.2s ease;
 }
 
-.top-link:hover{
+.top-link:hover {
   color: #f2c879;
 
   border-color: #f2c879;
@@ -66,12 +72,18 @@
     0 0 0.45rem rgba(242, 200, 121, 0.75);
 }
 
+/* =========================================
+   SECTION HEADER
+========================================= */
+
 .who-we-are-header {
   position: relative;
   z-index: 1;
 
   max-width: 850px;
+
   margin: 0 auto 2rem;
+
   text-align: center;
 }
 
@@ -79,8 +91,11 @@
   margin: 0 0 0.5rem;
 
   color: #b7c15f;
+
   font-size: 0.78rem;
+
   letter-spacing: 0.24em;
+
   text-transform: uppercase;
 }
 
@@ -88,26 +103,40 @@
   margin: 0;
 
   color: #f4ead7;
+
   font-family: 'Cormorant Garamond', serif;
+
   font-size: clamp(2rem, 4vw, 3.15rem);
   font-weight: 600;
 }
+
+/* =========================================
+   LAYOUT
+========================================= */
 
 .who-we-are-layout {
   position: relative;
   z-index: 1;
 
   display: grid;
-  grid-template-columns: 1fr 2.1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.1fr);
+
   gap: 2rem;
+
   align-items: center;
 
   max-width: 1320px;
+
   margin: 0 auto;
 }
 
+/* =========================================
+   STUDIO COPY
+========================================= */
+
 .studio-copy {
   color: rgba(244, 234, 215, 0.78);
+
   font-size: 1rem;
   line-height: 1.65;
 }
@@ -118,6 +147,7 @@
 
 .studio-highlight {
   color: #b7c15f;
+
   font-weight: 700;
 }
 
@@ -127,17 +157,26 @@
   justify-content: center;
 
   margin-top: 0.25rem;
+
   padding: 0.75rem 1.35rem;
 
   color: #2d241c;
-  background: linear-gradient(135deg, #f2c879, #d8b66f);
+
+  background:
+    linear-gradient(
+      135deg,
+      #f2c879,
+      #d8b66f
+    );
 
   border: 1px solid rgba(244, 234, 215, 0.55);
   border-radius: 999px;
 
   font-size: 0.82rem;
   font-weight: 700;
+
   letter-spacing: 0.12em;
+
   text-transform: uppercase;
   text-decoration: none;
 
@@ -153,6 +192,7 @@
 
 .about-button:hover {
   transform: translateY(-2px);
+
   filter: brightness(1.08);
 
   box-shadow:
@@ -161,9 +201,14 @@
     inset 0 0 0 1px rgba(255, 255, 255, 0.22);
 }
 
+/* =========================================
+   ROLE CARDS
+========================================= */
+
 .studio-role-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
   gap: 1.35rem;
 }
 
@@ -196,6 +241,7 @@
   transform: translateY(-4px);
 
   border-color: rgba(183, 193, 95, 0.72);
+
   box-shadow:
     0 18px 35px rgba(0, 0, 0, 0.28),
     0 0 18px rgba(183, 193, 95, 0.1);
@@ -204,6 +250,7 @@
 .role-image {
   width: 120px;
   height: 120px;
+
   margin: 0 auto 1rem;
 
   background-repeat: no-repeat;
@@ -234,10 +281,14 @@
   margin: 0 0 0.25rem;
 
   color: #f4ead7;
+
   font-family: 'Cinzel', serif;
+
   font-size: 1.05rem;
   font-weight: 500;
+
   letter-spacing: 0.08em;
+
   text-transform: uppercase;
 }
 
@@ -245,6 +296,7 @@
   margin: 0 0 0.75rem;
 
   color: #d8b66f;
+
   font-size: 0.88rem;
 }
 
@@ -254,6 +306,7 @@
   max-width: 220px;
 
   color: rgba(244, 234, 215, 0.76);
+
   font-size: 0.9rem;
   line-height: 1.45;
 }
@@ -261,11 +314,81 @@
 .role-icons {
   display: flex;
   justify-content: center;
+
   gap: 1rem;
 
   color: #b7c15f;
+
   font-size: 1rem;
 }
+
+/* =========================================
+   LARGE MONITORS
+========================================= */
+
+@media (min-width: 1600px) {
+  .who-we-are-section {
+    width: min(100%, 1650px);
+
+    padding: 3rem 3rem 3.5rem;
+  }
+
+  .who-we-are-layout {
+    max-width: 1450px;
+
+    gap: 3rem;
+  }
+
+  .studio-copy {
+    font-size: 1.08rem;
+  }
+
+  .role-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* =========================================
+   LAPTOPS / SMALL DESKTOPS
+========================================= */
+
+@media (max-width: 1200px) {
+  .who-we-are-section {
+    padding: 2.5rem 1.5rem 3rem;
+  }
+
+  .who-we-are-layout {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 2fr);
+
+    gap: 1.5rem;
+  }
+
+  .studio-role-grid {
+    gap: 1rem;
+  }
+
+  .studio-role-card {
+    padding: 1.15rem 0.9rem 1.25rem;
+  }
+
+  .role-image {
+    width: 105px;
+    height: 105px;
+  }
+
+  .studio-role-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .role-description {
+    font-size: 0.84rem;
+  }
+}
+
+/* =========================================
+   TABLETS
+========================================= */
 
 @media (max-width: 1100px) {
   .who-we-are-layout {
@@ -274,18 +397,130 @@
 
   .studio-copy {
     max-width: 800px;
+
     margin: 0 auto;
+
     text-align: center;
+  }
+
+  .studio-role-grid {
+    max-width: 900px;
+
+    margin: 0 auto;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
+  .studio-role-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    max-width: 680px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
   .who-we-are-section {
-    margin-top: 2rem;
-    padding: 2rem 1rem 3rem;
+    margin-top: 0;
+
+    padding: 2.25rem 1rem 3rem;
+
+    border-radius: 18px;
+  }
+
+  .who-we-are-section::before {
+    inset: 8px;
+
+    border-radius: 12px;
+  }
+
+  .top-link {
+    position: static;
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 auto 1.5rem;
+
+    text-align: center;
+  }
+
+  .who-we-are-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .section-kicker {
+    font-size: 0.7rem;
+
+    letter-spacing: 0.18em;
+  }
+
+  .who-we-are-header h2 {
+    font-size: clamp(1.8rem, 9vw, 2.35rem);
+  }
+
+  .studio-copy {
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .about-button {
+    width: 100%;
+
+    max-width: 320px;
   }
 
   .studio-role-grid {
     grid-template-columns: 1fr;
+
+    gap: 1.35rem;
+
+    max-width: 430px;
+  }
+
+  .studio-role-card {
+    padding: 1.25rem 1rem 1.35rem;
+  }
+
+  .role-image {
+    width: 115px;
+    height: 115px;
+  }
+
+  .studio-role-card h3 {
+    font-size: 1rem;
+  }
+
+  .role-description {
+    max-width: 260px;
+
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+  .who-we-are-section {
+    padding: 2rem 0.8rem 2.75rem;
+  }
+
+  .role-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .studio-role-card h3 {
+    font-size: 0.92rem;
+  }
+
+  .about-button {
+    font-size: 0.76rem;
   }
 }

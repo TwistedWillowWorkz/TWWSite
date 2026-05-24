@@ -28,14 +28,20 @@
   align-items: flex-start;
   justify-content: space-between;
 
+  gap: 2rem;
+
   max-width: 1800px;
 
   margin: 0 auto;
 }
 
-/* LOGO */
+/* =========================================
+   LOGO
+========================================= */
 
 .logo-section {
+  flex-shrink: 0;
+
   width: 360px;
   height: 120px;
 
@@ -49,13 +55,17 @@
     drop-shadow(0 0 10px rgba(0, 0, 0, 0.45));
 }
 
-/* NAVIGATION */
+/* =========================================
+   NAVIGATION
+========================================= */
 
 .main-nav {
   display: flex;
   align-items: flex-start;
+  justify-content: flex-end;
+  flex-wrap: wrap;
 
-  gap: 3rem;
+  gap: 2.5rem;
 
   padding-top: 1rem;
 }
@@ -80,6 +90,8 @@
 
   text-transform: uppercase;
 
+  white-space: nowrap;
+
   transition:
     color 0.25s ease,
     text-shadow 0.25s ease;
@@ -92,7 +104,9 @@
     0 0 10px rgba(183, 207, 114, 0.18);
 }
 
-/* DIVIDER LINE */
+/* =========================================
+   DIVIDER LINE
+========================================= */
 
 .nav-divider {
   position: relative;
@@ -123,7 +137,9 @@
   transform: scaleX(1.08);
 }
 
-/* FLOURISH */
+/* =========================================
+   FLOURISH
+========================================= */
 
 .nav-divider::after {
   content: "✦";
@@ -148,6 +164,10 @@
   text-shadow:
     0 0 8px rgba(183, 207, 114, 0.25);
 }
+
+/* =========================================
+   ACTIVE LINK
+========================================= */
 
 .main-nav a.active {
   color: #d5e89a;
@@ -179,4 +199,127 @@
 
   text-shadow:
     0 0 10px rgba(213, 232, 154, 0.35);
+}
+
+/* =========================================
+   LARGE MONITORS
+========================================= */
+
+@media (min-width: 1600px) {
+  .site-header {
+    padding: 1.5rem 4rem;
+  }
+
+  .main-nav {
+    gap: 3.5rem;
+  }
+
+  .main-nav a {
+    font-size: 1.05rem;
+  }
+
+  .logo-section {
+    width: 420px;
+    height: 140px;
+  }
+}
+
+/* =========================================
+   LAPTOPS / SMALLER DESKTOPS
+========================================= */
+
+@media (max-width: 1200px) {
+  .site-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .logo-section {
+    width: 300px;
+    height: 100px;
+  }
+
+  .main-nav {
+    gap: 1.75rem;
+  }
+
+  .main-nav a {
+    font-size: 0.88rem;
+  }
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+  .site-header {
+    padding: 1rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1rem;
+  }
+
+  .logo-section {
+    width: 260px;
+    height: 90px;
+
+    background-position: center;
+  }
+
+  .main-nav {
+    justify-content: center;
+
+    gap: 1.5rem;
+
+    padding-top: 0;
+  }
+
+  .main-nav a {
+    font-size: 0.82rem;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .site-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .header-inner {
+    gap: 0.75rem;
+  }
+
+  .logo-section {
+    width: 220px;
+    height: 75px;
+  }
+
+  .main-nav {
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 1rem 1.25rem;
+  }
+
+  .main-nav a {
+    font-size: 0.72rem;
+
+    letter-spacing: 0.05em;
+  }
+
+  .nav-divider {
+    width: 100%;
+  }
+
+  .nav-divider::after {
+    font-size: 0.62rem;
+  }
 }

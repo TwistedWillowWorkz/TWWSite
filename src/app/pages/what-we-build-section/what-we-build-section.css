@@ -2,8 +2,10 @@
   position: relative;
   z-index: 2;
 
-  max-width: 1500px;
+  width: min(100%, 1500px);
+
   margin: 0 auto;
+
   padding: 2.5rem 2rem 4rem;
 
   background:
@@ -22,6 +24,8 @@
     0 18px 45px rgba(0, 0, 0, 0.16),
     inset 0 0 0 2px rgba(120, 88, 42, 0.45),
     inset 0 0 24px rgba(255, 223, 148, 0.04);
+
+  overflow: hidden;
 }
 
 .what-we-build-section::before {
@@ -38,6 +42,7 @@
 
 .top-link {
   position: absolute;
+
   top: 1.5rem;
   right: 1.75rem;
 
@@ -45,7 +50,9 @@
 
   font-size: 0.75rem;
   font-weight: 700;
+
   letter-spacing: 0.18rem;
+
   text-decoration: none;
 
   border-bottom: 1px solid currentColor;
@@ -58,27 +65,37 @@
 
 .top-link:hover {
   color: #f2c879;
+
   border-color: #f2c879;
-  text-shadow: 0 0 0.45rem rgba(242, 200, 121, 0.75);
+
+  text-shadow:
+    0 0 0.45rem rgba(242, 200, 121, 0.75);
 }
 
-/* SECTION HEADER */
+/* =========================================
+   SECTION HEADER
+========================================= */
 
 .section-header {
- position: relative;
+  position: relative;
   z-index: 1;
 
   max-width: 800px;
+
   margin: 0 auto 2.5rem;
+
   text-align: center;
 }
 
 .section-kicker {
- margin: 0 0 0.5rem;
+  margin: 0 0 0.5rem;
 
   color: #b7c15f;
+
   font-size: 0.78rem;
+
   letter-spacing: 0.24em;
+
   text-transform: uppercase;
 }
 
@@ -86,7 +103,9 @@
   margin: 0 0 0.5rem;
 
   color: #f4ead7;
+
   font-family: 'Cormorant Garamond', serif;
+
   font-size: clamp(2rem, 4vw, 3.25rem);
   font-weight: 600;
 }
@@ -106,7 +125,9 @@
     );
 }
 
-/* GRID */
+/* =========================================
+   GRID
+========================================= */
 
 .build-grid {
   position: relative;
@@ -114,20 +135,24 @@
 
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 430px));
+
   justify-content: center;
 
   gap: 2.25rem;
 }
 
-/* CARD */
+/* =========================================
+   CARD
+========================================= */
 
 .build-card {
-  overflow: hidden;
-
   width: 100%;
   min-height: 100%;
 
+  overflow: hidden;
+
   color: inherit;
+
   text-decoration: none;
 
   background:
@@ -166,10 +191,13 @@
 .build-card:visited,
 .build-card:active {
   color: inherit;
+
   text-decoration: none;
 }
 
-/* IMAGE */
+/* =========================================
+   IMAGE
+========================================= */
 
 .card-image {
   height: 220px;
@@ -208,10 +236,13 @@
     url('../../../assets/experimental.png');
 }
 
-/* CONTENT */
+/* =========================================
+   CONTENT
+========================================= */
 
 .card-content {
   padding: 1.7rem 1.65rem 1.85rem;
+
   color: #f4ead7;
 }
 
@@ -221,6 +252,7 @@
   color: #f4ead7;
 
   font-family: 'Cormorant Garamond', serif;
+
   font-size: 1.7rem;
 }
 
@@ -260,7 +292,8 @@
 
   cursor: pointer;
 
-  box-shadow: 0 0 10px rgba(255, 223, 148, 0.16);
+  box-shadow:
+    0 0 10px rgba(255, 223, 148, 0.16);
 
   transition:
     background 0.2s ease,
@@ -278,34 +311,181 @@
       rgba(160, 122, 62, 0.98)
     );
 
-  box-shadow: 0 0 16px rgba(255, 223, 148, 0.28);
+  box-shadow:
+    0 0 16px rgba(255, 223, 148, 0.28);
 }
 
-/* RESPONSIVE */
+/* =========================================
+   LARGE MONITORS
+========================================= */
+
+@media (min-width: 1600px) {
+  .what-we-build-section {
+    width: min(100%, 1650px);
+
+    padding: 3rem 3rem 4.5rem;
+  }
+
+  .build-grid {
+    grid-template-columns: repeat(3, minmax(0, 470px));
+
+    gap: 2.75rem;
+  }
+
+  .card-image {
+    height: 250px;
+  }
+
+  .card-content h3 {
+    font-size: 1.9rem;
+  }
+}
+
+/* =========================================
+   LAPTOPS / SMALL DESKTOPS
+========================================= */
 
 @media (max-width: 1200px) {
+  .what-we-build-section {
+    padding: 2.5rem 1.5rem 3.5rem;
+  }
+
   .build-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+
     gap: 1.5rem;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+
+  .card-content {
+    padding: 1.45rem 1.35rem 1.6rem;
   }
 }
 
+/* =========================================
+   TABLETS
+========================================= */
+
 @media (max-width: 950px) {
+  .what-we-build-section {
+    padding: 2.5rem 1.25rem 3.25rem;
+  }
+
+  .top-link {
+    position: static;
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 auto 1.5rem;
+
+    text-align: center;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
   .build-grid {
-    grid-template-columns: minmax(0, 430px);
+    grid-template-columns: minmax(0, 520px);
+
+    gap: 1.75rem;
+  }
+
+  .card-image {
+    height: 230px;
   }
 }
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 650px) {
   .what-we-build-section {
     padding: 2.25rem 1rem 3rem;
+
+    border-radius: 18px;
+  }
+
+  .what-we-build-section::before {
+    inset: 8px;
+
+    border-radius: 12px;
+  }
+
+  .section-header {
+    margin-bottom: 1.75rem;
   }
 
   .section-kicker {
-    letter-spacing: 0.24rem;
+    font-size: 0.7rem;
+
+    letter-spacing: 0.18em;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 9vw, 2.35rem);
+  }
+
+  .section-divider {
+    width: 140px;
+  }
+
+  .build-grid {
+    grid-template-columns: 1fr;
+
+    gap: 1.4rem;
   }
 
   .card-image {
     height: 190px;
+  }
+
+  .card-content {
+    padding: 1.35rem 1.2rem 1.5rem;
+  }
+
+  .card-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.92rem;
+  }
+
+  .card-description {
+    margin-bottom: 1.4rem;
+
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .card-content button {
+    width: 100%;
+
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+  .what-we-build-section {
+    padding: 2rem 0.8rem 2.75rem;
+  }
+
+  .card-image {
+    height: 170px;
+  }
+
+  .card-content h3 {
+    font-size: 1.4rem;
   }
 }
