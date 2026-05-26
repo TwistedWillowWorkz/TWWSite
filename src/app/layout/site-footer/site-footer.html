@@ -2,93 +2,71 @@
   <div class="footer-inner">
 
     <div class="footer-brand-row">
-
-      <div
-        class="footer-icon"
-        aria-hidden="true">
-      </div>
+      <div class="footer-icon" aria-hidden="true"></div>
 
       <div class="footer-brand-copy">
-
-        <h2>Twisted Willow Workz</h2>
+        <h2>Twisted Willow Workz LLC</h2>
 
         <p>
           Crafting worlds, tools, and stories with code, creativity,
           and caffeine.
         </p>
 
-        <div
-          class="footer-socials"
-          aria-label="Social media links">
-
+        <div class="footer-socials" aria-label="Social media links">
           <a
-            href="#"
+            href="https://github.com/TwistedWillowWorkz"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="GitHub">
-
             <i class="fa-brands fa-github"></i>
-
           </a>
 
           <a
-            href="#"
+            href="https://www.facebook.com/profile.php?id=61568862676734"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Facebook">
-
             <i class="fa-brands fa-facebook-f"></i>
-
           </a>
 
           <a
-            href="#"
+            href="https://www.instagram.com/twistedwillowworkz/"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Instagram">
-
             <i class="fa-brands fa-instagram"></i>
-
           </a>
-
-
         </div>
-
       </div>
-
     </div>
 
-    <nav
-      class="footer-links"
-      aria-label="Quick links">
-
+    <nav class="footer-links" aria-label="Quick links">
       <h3>Quick Links</h3>
 
       <a routerLink="/" fragment="what-we-build-section">Projects</a>
-<a routerLink="/" fragment="who-we-are-section">About</a>
-<a routerLink="/" fragment="workshop-section">Workshop</a>
-<a routerLink="/" fragment="site-footer">Contact</a>
-
+      <a routerLink="/about">About</a>
+      <a routerLink="/" fragment="workshop-section">Workshop</a>
+      <a routerLink="/" fragment="site-footer">Connect</a>
     </nav>
 
     <div class="footer-contact">
+      <h3>Connect With Us</h3>
 
-      <h3>Get in Touch</h3>
-
-      <button
-        type="button"
-        class="footer-email-button"
-        (click)="openContactForm()">
+      <p class="footer-email-text">
         Studio@twistedwillowworkz.com
-      </button>
-
-      <p>
-        Open to collaborations, ideas,
-        and interesting conversations.
       </p>
 
+      <p>
+        Follow along as we build creative tools, living worlds,
+        and cozy digital experiences.
+      </p>
     </div>
 
   </div>
 
   <div class="footer-bottom">
-
     <p>
-      © 2026 Twisted Willow Workz. All rights reserved.
+      © 2026 Twisted Willow Workz LLC. All rights reserved.
     </p>
 
     <span aria-hidden="true">✦</span>
@@ -97,68 +75,5 @@
       Built with coffee, curiosity,
       and probably too many open tabs.
     </p>
-
   </div>
-
-  @if (isContactOpen) {
-  <div class="contact-modal-backdrop" (click)="closeContactForm()">
-    <div class="contact-modal" (click)="$event.stopPropagation()">
-
-      <button
-        type="button"
-        class="modal-close-button"
-        aria-label="Close contact form"
-        (click)="closeContactForm()">
-        ×
-      </button>
-
-      <p class="modal-kicker">Send a Raven</p>
-      <h2>Get in Touch</h2>
-
-      <form class="contact-form" (ngSubmit)="sendContactEmail()">
-
-        <label>
-          Name
-          <input
-            type="text"
-            name="name"
-            [(ngModel)]="contactForm.name"
-            required />
-        </label>
-
-        <label>
-          Email
-          <input
-            type="email"
-            name="email"
-            [(ngModel)]="contactForm.email"
-            required />
-        </label>
-
-        <label>
-          Subject
-          <input
-            type="text"
-            name="subject"
-            [(ngModel)]="contactForm.subject" />
-        </label>
-
-        <label>
-          Message
-          <textarea
-            name="message"
-            rows="5"
-            [(ngModel)]="contactForm.message"
-            required>
-          </textarea>
-        </label>
-
-        <button type="submit" class="contact-submit-button">
-          Send Message
-        </button>
-
-      </form>
-    </div>
-  </div>
-}
 </footer>
